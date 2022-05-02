@@ -1,0 +1,12 @@
+[
+  {
+    "$id": "1",
+    "$type": "TestApp.Model.Card, TestApp",
+    "ID": 2,
+    "Name": "erter",
+    "Produser": "eryry",
+    "Cost": "46545",
+    "Foto": "5464",
+    "Count": 5757
+  }
+]

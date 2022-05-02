@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\GalinaDev\TestApp\TestApp\obj\Debug\net6.0-windows\
+C:\GalinaDev\1\TestApp\obj\Debug\net6.0-windows\
 TestApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\GalinaDev\TestApp\TestApp\App.xaml
+C:\GalinaDev\1\TestApp\App.xaml
 4-1455533274
 
-17420027855
-196-233966239
+181904993115
+196476832592
 MainWindow.xaml;View\AdminView.xaml;View\CardView.xaml;View\CatalogView.xaml;
 
 False

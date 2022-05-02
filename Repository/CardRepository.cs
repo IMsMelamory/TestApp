@@ -36,6 +36,14 @@ namespace TestApp.Repository
             _entities.Remove(entity);
             ForceUpdate();
         }
+        public int FindMaxIDCard()
+        {
+            UpdateDataIfNotExist();
+            var id = _entities.Select(x => x.ID);
+            return id.Any() ? id.Max() : 0;
+
+
+        }
 
         public void RemoveById(int id)
         {

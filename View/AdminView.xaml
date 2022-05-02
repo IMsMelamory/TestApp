@@ -3,8 +3,59 @@
                     xmlns:viewModel="clr-namespace:TestApp.ViewModel" >
     <DataTemplate DataType="{x:Type viewModel:AdminViewModel}">
         <Grid>
-            <Button Command="{Binding AddNewCardCommand}"/>
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding Cards}" 
+                  SelectedItem="{Binding SelectedCard}"
+                  HorizontalContentAlignment="Stretch" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Red" >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Name" Grid.Row="0" HorizontalAlignment="Right"/>
+                                <Label Content="Produser:" Grid.Row="1" HorizontalAlignment="Right"/>
+                                <TextBox Text="{Binding Name}" Grid.Row="0" Grid.Column="1"/>
+                                <TextBox Text="{Binding Produser}" Grid.Row="1" Grid.Column="1"/>
+                                <Button Content="Редактировать" Grid.Row="2" Grid.Column="1"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+            <Button Grid.Column="0"
+                    Grid.Row="1"
+                    Height="50"
+                    Width="70"
+                    Content="Добавить"
+                    Command="{Binding AddNewCardCommand}"/>
+            <Button Grid.Column="1"
+                    Grid.Row="1"
+                    Height="50"
+                    Width="70"
+                    Content="Удалить"
+                    Command="{Binding DeleteCardCommand}"/>
         </Grid>
     </DataTemplate>
 </ResourceDictionary>
